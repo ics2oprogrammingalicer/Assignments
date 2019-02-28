@@ -33,7 +33,7 @@ areaText = display.contentHeight/2
 local areaText
 local textSize = 50
 local myOct 
-local verticesOfOct = {-15,30, 15,30, 30,15, 30,-15, 15,-30, -15,-30, -30,-15, -30,15}
+local verticesOfOct = {-20,35, 20,35, 35,20, 35,-20, 20,-35, -20,-35, -35,-20, -35,20}
 local octogonX = 2 / 4 * display.contentWidth
 local octogonY = 5 / 8 * display.contentHeight
 
@@ -48,4 +48,8 @@ areaText = display.newText("octogon", 0,0, Arial,textSize)
 
 -- anchor the text and set its (x,y) position
 areaText.anchorX = 0
+areaText.anchorY = 0
+areaText.x = 25
+areaText.y = 50
+areaText = display.contentHeight/2
 
