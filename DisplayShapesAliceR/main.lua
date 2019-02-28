@@ -7,10 +7,7 @@
 local areaText
 local textSize = 50 
 local myTriangle
-local baseOfTriangle = 250
-local heightOfTriangle = 500
-local areaOfTriangle
-local verticesOfTriangle = {-100,100, 0,-100, 100,100}
+local verticesOfTriangle = {-50,50, 0,-50, 50,50}
 local triangleX = 1 / 4 * display.contentWidth
 local triangleY = 3 / 8 * display.contentHeight
 
@@ -27,4 +24,28 @@ areaText = display.newText("triangle", 0,0, Arial, textSize)
 areaText.anchorX = 0
 areaText.anchorY = 0
 areaText.x = 155
-areaText.y = 50
+areaText.y = 100
+areaText = display.contentHeight/2
+
+------------------------------------------------------------------------
+
+-- create my local variables
+local areaText
+local textSize = 50
+local myOct 
+local verticesOfOct = {-15,30, 15,30, 30,15, 30,-15, 15,-30, -15,-30, -30,-15, -30,15}
+local octogonX = 2 / 4 * display.contentWidth
+local octogonY = 5 / 8 * display.contentHeight
+
+myOct = display.newPolygon(octogonX, octogonY, verticesOfOct)
+ 
+myOct:setFillColor(255/255, 255/255, 0/255)
+ 
+myOct:setStrokeColor(255/255, 255/255, 0/255)
+
+-- write the name of the shape
+areaText = display.newText("octogon", 0,0, Arial,textSize)
+
+-- anchor the text and set its (x,y) position
+areaText.anchorX = 0
+
