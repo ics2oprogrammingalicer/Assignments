@@ -49,7 +49,32 @@ areaText = display.newText("octogon", 0,0, Arial,textSize)
 -- anchor the text and set its (x,y) position
 areaText.anchorX = 0
 areaText.anchorY = 0
-areaText.x = 25
-areaText.y = 50
+areaText.x = 430
+areaText.y = 550
 areaText = display.contentHeight/2
 
+---------------------------------------------------------------------
+
+-- create my local variables
+local areaText
+local textSize = 50
+local myTrap 
+local verticesOfTrap = {-50,50, 50,50, 25,-50, -25,-50}
+local trapazoidX = 3 / 4 * display.contentWidth
+local trapazoidY = 3 / 8 * display.contentHeight
+
+myTrap = display.newPolygon(trapazoidX, trapazoidY, verticesOfTrap)
+ 
+myTrap:setFillColor(0/255, 255/255, 0/255)
+ 
+myTrap:setStrokeColor(0/255, 255/255, 0/255)
+
+-- write the name of the shape
+areaText = display.newText("trapazoid", 0,0, Arial,textSize)
+
+-- anchor the text and set its (x,y) position
+areaText.anchorX = 0
+areaText.anchorY = 0
+areaText.x = 650
+areaText.y = 100
+areaText = display.contentHeight/2
