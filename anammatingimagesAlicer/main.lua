@@ -43,11 +43,11 @@ scrollspeed = 3
 
 ---------------------------------------------------------------------------
  -- set image to be transparent
-Hotairballoon = 1
+Hotairballoon.alpha = 1
 
  -- set initial x and y position
- Hotairballoon = 0
- Hotairballoon = display.contentHeight/1
+ Hotairballoon.x = 0
+ Hotairballoon.y = display.contentHeight/1
 
  -- function: moveHotairballon
  -- input: this function accepts an event listener
@@ -55,9 +55,9 @@ Hotairballoon = 1
  -- discription: this function adds the scroll speed to the x value of the ship
  local function MoveHotairballon(event)
  	-- add the scrolol speed to the x value of the ship
- 	Hotairballoon = Hotairballoon + scrollSpeed
+ 	Hotairballoon.x = Hotairballoon.x + scrollSpeed
  	-- change the transparencey of the ship every time it moves so that it fades out
- 	Hotairballoon = Hotairballoon + 0.01
+ 	Hotairballoon.alpha = Hotairballoon.alpha + 0.01
 end
 
 -- moveship will be called over and over again
@@ -68,11 +68,11 @@ scrollspeed = 5
 
 ---------------------------------------------------------------------------
  -- set image to be transparent
-airplane = 1
+airplane.alpha = 1
 
  -- set initial x and y position
- airplane = 0
- airplane = display.contentHeight/1
+ airplane.x = 0
+ airplane.y = display.contentHeight/1
 
  -- function: moveHotairballon
  -- input: this function accepts an event listener
@@ -80,9 +80,9 @@ airplane = 1
  -- discription: this function adds the scroll speed to the x value of the ship
  local function MoveAirplane(event)
  	-- add the scrolol speed to the x value of the ship
- 	airplane = airplane + scrollSpeed
+ 	airplane.x = airplane.x + scrollSpeed
  	-- change the transparencey of the ship every time it moves so that it fades out
- 	airplane = airplane + 0.01
+ 	airplane.alpha = airplane.alpha + 0.01
 end
 
 -- moveship will be called over and over again
