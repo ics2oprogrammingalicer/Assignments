@@ -38,10 +38,10 @@ end
 -- MoveShip will be called over and over again 
 Runtime:addEventListener("enterFrame", MoveBird)
 
--- global variables 
-scrollspeed = 3
-
 ---------------------------------------------------------------------------
+-- global variables 
+balloonSpeed = 5
+
  -- set image to be transparent
 Hotairballoon = 1
 
@@ -67,6 +67,9 @@ Runtime:addEventListener("enterFrame", MoveHotairballon)
 scrollspeed = 5
 
 ---------------------------------------------------------------------------
+-- global variables 
+planeSpeed = 3
+
  -- set image to be transparent
 airplane = 1
 
