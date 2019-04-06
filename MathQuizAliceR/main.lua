@@ -150,6 +150,7 @@ local function NumericFieldListener( event )
 	end
 end
 
+
 --------------------------------------------------------------------------------------
 local function UpdateTime()
 
@@ -167,17 +168,19 @@ local function UpdateTime()
 		-- ***IF THERE ARE NO LIVES LEFT, PLAY A LOSE SOUND, SHOW A YOU LOSE IMAGE
 		-- AND CANCEL THE TIMER REMOVE THE THIRD HEART BY MAKING IT INVISIBLE
 		if (lives == 3)then
-			heart3.isvisible = false
+			heart3.isvisible = true
 		elseif (lives == 2) then
 			heart2.isVisible = false
 		elseif (lives == 1) then
-			heart1.isVisible = true
+			heart1.isVisible = false
 		elseif (lives == 0) then
 			gameOver.isVisible = true
 			numericField.isVisible = false
 			timer.cancel(countDownTimer)
-			clockText.isVisible = false 
-
+			clockText.isVisible = false
+			questionObject.isVisible = false 
+			correctObject.isVisible = false
+			heart3.isVisible = false
 		end
 
         
@@ -191,94 +194,6 @@ end
 local function StartTimer()
 	-- create a countdown that loops infinitely
 	countDownTimer = timer.performWithDelay( 1000, UpdateTime, 0)
-end
------------------------------------------------------------------------
-local function AskQuestion()
-	-- generate a random number beetween 1 and 2.
-	randomOperator = math.random(1,4)
-
-	--generate 2 random numbers
-	randomNumber1 = math.random(1,10)
-	randomNumber2 = math.random(1,10)
-
-	-- if the random operator is 1, then do addition
-	if (randomOperator == 1) then
-
-		-- calculate the correct answer
-		correctAnswer = randomNumber1 + randomNumber2
-
-		-- create question in text object
-	    questionObject.text = randomNumber1 .. " + " .. randomNumber2 .. " = "
-
-    -- if the random operator is 2, then do subtraction
-	elseif (randomOperator == 2) then
-
-		-- calculate the correct answer
-		correctAnswer = randomNumber1 - randomNumber2
-
-		-- create question in text object
-	    questionObject.text = randomNumber1 .. " - " .. randomNumber2 .. " = "
-
-
-	-- if the random operator is 3, then do multlipication
-	elseif (randomOperator == 3) then
-
-		-- calculate the correct answer
-		correctAnswer = randomNumber1 * randomNumber2
-
-		-- create question in text object
-	    questionObject.text = randomNumber1 .. " x " .. randomNumber2 .. " = "
-
-    -- if the random operator is 4, then do devision
-	elseif (randomOperator == 4) then
-
-		-- calculate the correct answer
-		correctAnswer = randomNumber1 / randomNumber2
-
-		-- create question in text object
-	    questionObject.text = randomNumber1 .. " ÷ " .. randomNumber2 .. " = "
-    end
-
-end
-
-local function HideCorrect()
-	correctObject.isVisible = false
-	AskQuestion()
-end
-
-local function HideIncorrect()
-	incorrectObject.isVisible = false
-	AskQuestion()
-end
-
-local function NumericFieldListener( event )
-
-	-- User begins editing "numericFeild"
-	if ( event.phase == "began") then 
-
-		--clear the text feild
-		event.target.text = ""
-
-	elseif event.phase == "submitted" then
-
-		-- when the answer is submitted (enter key is pressed) set user imput to users answer
-		userAnswer = tonumber(event.target.text)
-		
-		--if the users answer and the correct answer are the same:
-		if (userAnswer == correctAnswer) then
-			correctObject.isVisible = true
-			incorrectObject.isVisible = false
-			correctSoundChannel = audio.play(correctSound)
-			timer.performWithDelay(2000, HideCorrect)
-
-		else correctObject.isVisible = false
-			 incorrectObject.isvisible = true
-			 wrongSoundChannel = audio.play(wrongSound)
-			 timer.performWithDelay(2000, HideIncorrect)
-
-
-		end
-	end
 end
 
 --------------------------------------------------------------------------
