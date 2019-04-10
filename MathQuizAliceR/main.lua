@@ -195,6 +195,7 @@ local function StartTimer()
 	-- create a countdown that loops infinitely
 	countDownTimer = timer.performWithDelay( 1000, UpdateTime, 0)
 end
+--------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
 -- OBJECT CREATION
