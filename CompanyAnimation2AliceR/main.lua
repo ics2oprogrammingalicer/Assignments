@@ -11,11 +11,7 @@ display.setDefault("background", 0/255, 68/255, 204/255)
 ---------------------------------------------------------------------------------
 -- SOUNDS
 ---------------------------------------------------------------------------------
-local SwooshSound = audio.loadSound("Sounds/SwooshingSound.mp3")
-local SwooshSoundChannel
 
-SwooshSoundChannel = audio.play(SwooshSound)
-timer.performWithDelay(2000, HideCorrect)
 ---------------------------------------------------------------------------------
 -- GLOBAL AND LOCAL VARIABLES
 ---------------------------------------------------------------------------------
@@ -40,8 +36,8 @@ leftSide.y = 400
 transition.to(leftSide, {x=350, y=400, time=1000})
 
 -- initial x and y position for the right side
-rightSide.x = 1050
-rightSide.y = 400
+rightSide.x = 650
+rightSide.y = 0
 
 -- make the right side collide with the left side
 transition.to(rightSide, {x=650, y=400, time=1000})
