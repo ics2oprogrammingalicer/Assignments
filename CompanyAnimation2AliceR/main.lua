@@ -8,9 +8,6 @@ display.setStatusBar(display.HiddenStatusBar)
 
 -- set background colour
 display.setDefault("background", 0/255, 68/255, 204/255)
----------------------------------------------------------------------------------
--- SOUNDS
----------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------
 -- GLOBAL AND LOCAL VARIABLES
@@ -22,9 +19,17 @@ scrollSpeed = 3
 local leftSide = display.newImageRect("Images/logoLeftSide.png", 300, 400)
 local rightSide = display.newImageRect("Images/logoRightSide.png", 300, 400)
 local logo = display.newImageRect("Images/CompanyLogoAliceR.png", 300, 400)
-
+local SwooshingSound = audio.loadSound("Sounds/SwooshingSound.mp3")
+local SwooshingSoundsChannel
 -- make logo invisible
 logo.isVisible = false
+
+---------------------------------------------------------------------------------
+-- SOUNDS
+---------------------------------------------------------------------------------
+  -- start the splash screen music
+        SwooshingSoundChannel = audio.play(SwooshingSound)
+
 ---------------------------------------------------------------------------------
 -- POSITIONS AND TRANSITIONS
 ---------------------------------------------------------------------------------
