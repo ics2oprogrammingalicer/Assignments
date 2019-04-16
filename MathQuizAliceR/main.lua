@@ -54,6 +54,7 @@ local correctSoundChannel
 
 local wrongSound = audio.loadSound( "Sounds/wrongSound.mp3")
 local wrongSoundChannel
+
 -----------------------------------------------------------------------
 -- LOCAL FUNCTIONS
 -----------------------------------------------------------------------
