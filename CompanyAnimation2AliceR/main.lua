@@ -40,7 +40,7 @@ local SwooshingSoundsChannel
 
 
 -- make logo invisible
-logo.isVisible = false-
+logo.isVisible = false
 
 -- initial x and y position of left side
 leftSide.x = 0
